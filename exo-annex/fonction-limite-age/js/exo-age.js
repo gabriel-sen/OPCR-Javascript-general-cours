@@ -1,11 +1,11 @@
 function accesSite(){
-  let ageLimite = prompt("How old are you ?");
-  if (ageLimite >= 16){
-    var yes = " Ok, you can drive ! " ;
+  let ageLimite = prompt("HQuel age as tu ?");
+  if (ageLimite >= 18){
+    var yes = " Ok, tu as l'age pour conduire ! " ;
   } else {
-    var no = "No, you can't drive!" ;
+    var no = "Non, tu n'as aps l'age pour conduire !" ;
   }
-  let message =  "Can you drive ?" +  (yes || no) ;
+  let message =  "En France :" +  (yes || no) ;
   return message
 }
 
