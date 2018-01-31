@@ -59,11 +59,65 @@ if(nombre > O){
 
 
 
-// LA CONDITION ET &&
+// L'OPERATEUR ET &&
 
 var nombre = Number(prompt(" Veuillez entrer une valeur pour vois si elle est comprise entre 0 et 100"));
 if ((nombre >= 0) && (nombre <=100)){
   console.log(nombre + "Est compris entre 0 et 100");
 }else {
   console.log(nombre + "N'est aps compris entre 0 et 100")
+}
+
+// L'opérateur  && as comme résultat la valeure true uniquement si les deux valeurs qu'il met en corelation sont true.
+
+
+
+// LA CONDITION LOGIQUE OU || (shift + alt + l = ||sur mac)
+
+var nombre = Number(prompt("Entrez un nombre : "));
+if((nombre < 0) || (nombre >100)){
+  console.log("Votre nombre est en dehors de la fourchette de O à 100")
+} else {
+  console.log(nombre + " Est compris entre 0 et 100")
+}
+// L'opérateur || as comme valeure true  si au minimum une des deux valeurs vaux true.
+
+
+
+// L'OPERATEUR ! Sinon
+var nombre = Number(prompt( "Entrez une valeure"));
+if(!(nombre >100)){ //! il inverse la valeur true deviens false. Plus grand que deviens plus petit que.
+  console.log(nombre + " est plus petit que 100 ")
+} else {
+  console.log(nombre + " est plus grand que 100")
+}
+// Cette operateur inverse les vérités des valeurs pour lesquels il est employé.
+
+
+var meteo = String(prompt( "Quel temps fait-il dehors ? \nChoix possible : vent, chaud, froid"));
+if(meteo === "vent" ){
+  console.log(alert("Mettez de quoi vous protéger du vent"));
+} else if(meteo === "chaud" ) {
+  console.log(alert("Sortez en t-shirt"));
+}else if(meteo === "froid" ){
+  console.log(alert("habillez vous chaudementc ar il fait très froid ! "))
+} else {
+  console.log(alert(" Veuillez utiliser imperativement les mots: \n- vent \n- chaud \n- froid"))
+}
+// Ici on fait appel plusieurs fois à la valeurs qu'on fait analyser et on fait exploiter son résultat. Or, il y as une autre façon de faire. Le Switch Il permet d'affilier des "cas" à traiter pour une seul valeure.
+
+// le SWITCH (je viens de comprendre alors que code academy c'étais pas sic laire.)
+var meteo = String(prompt("Quel temps fait il dehors ?\n- soleil \n- pluie \n- froid"));
+switch (meteo) {
+  case "soleil" :
+    alert("Sortez en t-shirt");
+    break;
+  case "pluie" :
+    alert(" Prennez un parapluie");
+    break;
+  case "froid" :
+    alert("sortez couvert, il caille");
+    break;
+  default: // il prends la place du else dans l'exemple précédant
+    alert(" Veuillez utiliser imperativement les mots: \n- soleil \n- pluie \n- froid");
 }
