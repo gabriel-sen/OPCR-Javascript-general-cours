@@ -15,7 +15,9 @@ valeure5 < valeure6 // inférieur à
 valeure7 <= valeur8 // inférieur ou égale à
 valeur9 > valeur10 // Superieur à
 valeur11 >= valeur12 // superieur ou égale à
-
+valeure13 && valeure14 // operateur ET si la valeure13 et la 14 sont true alors le résultat est true sinon false
+valeur15 || valeure16 // choix entre l'un OU l'autre c'est un operateur de comparaison.
+! (valeure17) > (valeure18) // ! est un operateur non. In inverse la valeure soit d'une variable soir d'un operateur.
 
 //Exemple
 
@@ -61,7 +63,7 @@ if(nombre > O){
 
 // L'OPERATEUR ET &&
 
-var nombre = Number(prompt(" Veuillez entrer une valeur pour vois si elle est comprise entre 0 et 100"));
+var nombre = Number(prompt(" Veuillez entrer une valeur pour voir si elle est comprise entre 0 et 100"));
 if ((nombre >= 0) && (nombre <=100)){
   console.log(nombre + "Est compris entre 0 et 100");
 }else {
@@ -75,10 +77,10 @@ if ((nombre >= 0) && (nombre <=100)){
 // LA CONDITION LOGIQUE OU || (shift + alt + l = ||sur mac)
 
 var nombre = Number(prompt("Entrez un nombre : "));
-if((nombre < 0) || (nombre >100)){
+if((nombre < 0) || (nombre >100)){ // imaginez que vous souhaitez vérifier si un nombre est plus petit que 0 ou plus grand que 100
   console.log("Votre nombre est en dehors de la fourchette de O à 100")
 } else {
-  console.log(nombre + " Est compris entre 0 et 100")
+  console.log(nombre + " Est compris entre 0 OU 100")
 }
 // L'opérateur || as comme valeure true  si au minimum une des deux valeurs vaux true.
 
