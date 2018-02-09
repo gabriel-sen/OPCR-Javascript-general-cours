@@ -1,7 +1,7 @@
 function aire(rayon){
-  aireCercle = (rayon*rayon)
+  aireCercle = (rayon*rayon)*Math.PI;
   return aireCercle ;
 }
 
-aire(prompt("Entrez le rayon de votre cercle pour calculer l'aire"));
-console.log(aire());
+
+console.log(aire(prompt("Entrez le rayon de votre cercle pour calculer l'aire")));
