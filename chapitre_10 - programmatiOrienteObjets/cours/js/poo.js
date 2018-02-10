@@ -1,20 +1,38 @@
-// pour obtenire la longueure d'une chaine de caractère sous forme d'une valeure Number on utilise la propriété .length
-console.log("ABC".length); // on obtiens 3
+var stylo = { // mon premier objet
+  type: "bille", // voici ses propriétés
+  couleur: "bleu",
+  marque: "bic"
+}; // on oublie pas le petit point virgule
 
-// Ce qui est interessant c'estq ue cette valeur peut être stocké dans une variable.
+// Pour utiliser un objet nous devons utiliser la notation pointée. c'est tout bete :
 
-var mot = "Gabriel";
-var longueureMot = mot.length;
-console.log(longueureMot); // affiche 7
+console.log(stylo.type) // pour appeler la propriété type par exemple.
+// mais il existe d'autre syntaxes pour accéder aux propriétés.
+console.log(stylo['type']); // il affiche "bille". Cette syntaxe est moins utilisé que la notation pointée.
 
-// Il est possible de convertire une chaine de caractère en minuscule via la propriété .toLowerCase() ou en majuscule .toUpperCase
+// il estpossible d'utiliser les proprétés de l'onjet dans plusieurs situation comme par exeple dans une phrase.
 
-var texte = "sen"
-var motEnMinusule = texte.toLowerCase();
-console.log(motEnMinusule);
+var ciel = {
+  couleur: "bleue",
+  type:"nuageux"
+};
+console.log("ce ciel est vachement "+ ciel.couleur+" et il est aussi très "+ciel.type);
 
-var motEnMajuscule = texte.toUpperCase();
-console.log(motEnMajuscule);
 
+// il est possible de modifier la valeure d'une propriété de l'objet très facilement.
 
-// Les caractères sont numérotés de 0
+var cielNamek = {
+  couleur: "vert",
+  type:"orageux"
+};
+console.log("Le ciel de la planete Namek est vachement "+ cielNamek.couleur +" et il est aussi très "+cielNamek.type);
+
+cielNamek.couleur = "rouge" // modifie la couleur du ciel de Namek
+
+console.log("Ho non! je suis daltonien :-( Le ciel de la planete Namek est vachement "+ cielNamek.couleur +" et il est aussi très "+cielNamek.type);
+
+// on peux aussi ajouter des propriétés à un objet déja crééé.
+
+cielNamek.prix = 2.5; // la propriété n'existe pas dans l'objet elle est ajouté.
+
+console.log("Le prix d'un voyage vers namek est de "+ cielNamek.prix + "€")
