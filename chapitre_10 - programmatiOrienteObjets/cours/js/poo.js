@@ -53,3 +53,19 @@ personnage.force = personnage.force + 10;
 console.log(personnage.nom + " a " + personnage.sante + " points de vie et " + personnage.force + " en force");
 
 // FIN MINI JEUX DE ROLE -------
+
+
+// Les méthodes
+// Les methodes : en gros c'est une fonction dans un objet qui est déclaré comme l'est une propriété et ser appelé par le console log de la même façon mais avec des parenthèses à la fin.
+
+var perso = {
+  nom: "Edward",
+  sante:100,
+  force:23,
+  decrire : function () {  // on déclare la fonction dans la propriété
+    var description = this.nom + " a " + this.sante + " points de vie et " + this.force + "en force"; // nouvel élément .this il dit remplace "nompDeLaPropriete.sante"
+    return description;
+  } // on ferme la propriété + function = METHODE
+};
+
+console.log(perso.decrire()); // on appel l'objet et sa methode pour afficher son contenu. 
