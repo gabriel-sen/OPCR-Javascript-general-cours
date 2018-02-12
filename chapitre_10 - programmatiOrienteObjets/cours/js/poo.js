@@ -36,3 +36,20 @@ console.log("Ho non! je suis daltonien :-( Le ciel de la planete Namek est vache
 cielNamek.prix = 2.5; // la propriété n'existe pas dans l'objet elle est ajouté.
 
 console.log("Le prix d'un voyage vers namek est de "+ cielNamek.prix + "€")
+
+// MINI JEUX DE ROLE -------
+var personnage = {
+  nom: "Daer",
+  sante: 150,
+  force:25
+};
+
+console.log(personnage.nom + " a " + personnage.sante + " points de vie et " + personnage.force + " en force.")
+// Daez est bléssé durant un combat
+personnage.sante = personnage.sante - 20;
+// Daer trouve un bracelet de forece
+personnage.force = personnage.force + 10;
+
+console.log(personnage.nom + " a " + personnage.sante + " points de vie et " + personnage.force + " en force");
+
+// FIN MINI JEUX DE ROLE -------
