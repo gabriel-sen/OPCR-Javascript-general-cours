@@ -1,4 +1,4 @@
-var Personnage = { // le template du personnage contient des propriété vides parce qu'on (2)
+var Personnage = { // le prototype du personnage contient des propriété vides parce qu'on (2)
   nom : " ",
   sante : 0,
   force : 0,
@@ -22,5 +22,5 @@ perso2.force = 130;
 perso2.xp = 10;
 
 
-console.log(perso1.decrire()); // on logg la description du template, d'ou l'utilité de ".this"
+console.log(perso1.decrire()); // on logg la description du prototype, d'ou l'utilité de ".this"
 console.log(perso2.decrire());
