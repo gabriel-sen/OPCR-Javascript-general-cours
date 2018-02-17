@@ -6,6 +6,22 @@ var Personnage = {
     this.nom = nom;
     this.sante = sante;
     this.force = force;
+  },
+  // On ajoute l'attaque
+  attaquer: function (cible) {
+    if (this.sante >0){
+      var degats = this.force;
+      console.log(this.nom + " attaque " + cible.nom + " et lui fait " + degats + " points de dégâts");
+      cible.sante = cible.sante - degats;
+        if (cible.sante >0){
+          console.log(cible.nom + " a encore" + cible.sante+ " points de vie");
+        } else {
+          coble.sante = 0;
+          console.log(cible.nom + " est mort ! ");
+        }
+    } else {
+      console.log(this.nomm + " ne peut pas attaquer : il est mort... ")
+    }
   }
 };
 
@@ -54,3 +70,6 @@ console.log(joueur2.decrire());
 var monstre = Object.create(Adversaire);
 monstre.initAdversaire("ZogZog", 50, 20, "orc", 10);
 console.log(" Un affreux monstre arrive, c'est un " + monstre.race + "nommé " + monstre.nom);
+
+
+// Combat !
