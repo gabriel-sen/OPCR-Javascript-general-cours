@@ -25,7 +25,6 @@ var Personnage = {
   }
 };
 
-
 // PROTOTYPE PERSONNAGE
 var Joueur = Object.create(Personnage);
   // Initialise le joueur
@@ -41,6 +40,14 @@ Joueur.decrire = function(){
   return description;
 };
 
+// COmbat adversaire
+Joueur.combattre = function(adversaire){
+  this.attaquer(adversaire);
+  if (adversaire.sante === 0){
+    console.log(this.nom + " à tué " + adversaire.nom + " et gagne " + adversaire.valeur + "  points d'experience");
+    this.xp += adversaire.valeur;
+  }
+}
 
 // ADVERSAIRE
 var Adversaire = Object.create(Personnage);
@@ -54,22 +61,27 @@ Adversaire.initAdversaire = function(nom, sante, force, race, valeur){
 // maintenant on créer les personnages en donnant les valeurs.
 
 var joueur1 = Object.create(Joueur);
-joueur1.initJoueur("Aurora", 100, 50);
+joueur1.initJoueur("Aurora", 100, 25);
 
 var joueur2 = Object.create(Joueur);
-joueur2.initJoueur("Gladius", 150,150);
-
+joueur2.initJoueur("Gladius", 150,30);
 
 // on initie la partie
-console.log("Bienvenue dans ce jeu d'aventure ! Voici nos courageux héros :")
+console.log("Bienvenue dans ce jeu d'aventure ! Voici nos courageux héros :");
 console.log(joueur1.decrire());
 console.log(joueur2.decrire());
 
-
 // donne aussi les valeurs au mosntre
 var monstre = Object.create(Adversaire);
-monstre.initAdversaire("ZogZog", 50, 20, "orc", 10);
-console.log(" Un affreux monstre arrive, c'est un " + monstre.race + "nommé " + monstre.nom);
+monstre.initAdversaire("ZogZog", 40, 20, "orc", 10);
 
+console.log(" Un affreux monstre arrive, c'est un " + monstre.race + " nommé " + monstre.nom);
+monstre.attaquer(joueur1);
+monstre.attaquer(joueur2);
+
+joueur1.combattre(monstre);
+joueur2.combattre(monstre);
+console.log(joueur1.decrire());
+console.log(joueur2.decrire());
 
 // Combat !
