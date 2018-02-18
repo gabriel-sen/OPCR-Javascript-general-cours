@@ -84,4 +84,4 @@ joueur2.combattre(monstre);
 console.log(joueur1.decrire());
 console.log(joueur2.decrire());
 
-// Combat !
+// Bugg surviens au moment de la mort de zogZog

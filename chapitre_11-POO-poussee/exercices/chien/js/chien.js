@@ -1,14 +1,21 @@
-// TODO : ajoutez ici la définition de l'objet chien
-var chien ={
-  nom: "Spyke",
-  race: "Tekel",
-  taille: 30,
+var Chien = {
+  init: function(nom, race, taille){
+    this.nom = nom;
+    this.race = race;
+    this.taille = taille;
+  },
   aboyer: function(){
-    var aboiement = "woof-woof !";
-    return aboiement;
+    aboie = "Woof ! "
+    return aboie ;
   }
-}
+};
 
+var crokdur = Object.create(Chien);
+crokdur.init("Crokdur", "mâtin de Naples", 75);
+console.log(crokdur.nom + " est un " + crokdur.race + " mesurant " + crokdur.taille + " cm");
+console.log("Tiens, un chat ! " + crokdur.nom + " aboie : " + crokdur.aboyer());
 
-console.log(chien.nom + " est un " + chien.race + " mesurant " + chien.taille + " cm");
-console.log("Tiens, un chat ! " + chien.nom + " aboie : " + chien.aboyer());
+var pupuce = Object.create(Chien);
+pupuce.init("Pupuce", "bichon", 22);
+console.log(pupuce.nom + " est un " + pupuce.race + " mesurant " + pupuce.taille + " cm");
+console.log("Tiens, un chat ! " + pupuce.nom + " aboie : " + pupuce.aboyer());
