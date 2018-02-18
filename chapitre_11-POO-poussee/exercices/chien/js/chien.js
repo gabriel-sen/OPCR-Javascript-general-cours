@@ -1,4 +1,4 @@
-var Chien = {
+var Chien = { // prototype
   init: function(nom, race, taille){
     this.nom = nom;
     this.race = race;
