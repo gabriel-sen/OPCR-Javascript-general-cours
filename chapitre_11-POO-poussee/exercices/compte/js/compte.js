@@ -1,25 +1,50 @@
-var solde = 0;  // le compte est initialement de 0
-var entree = Number(prompt("Entrez une somme à créditer sur un compte à actuellement : " + solde + " €" )); // on récupère une valeure
+// TODO : ajoutez ici la définition des objets nécessaires
+var compteBancaire =  {
+  initCB: function(nom, solde,montant) {
+    this.nom = nom;
+    this.solde = solde;
 
-var compteAlexCrediter = { // Cette objet est le compte à créditer
-  titulaire:"Alex",
-  crediter: solde + entree, // cette propriété crédite le solde
-  crediterSolde : function () {
-    var descriptionCredit = "Titulaire "+ this.titulaire + " , solde : " + this.crediter + " euros.";
-    return  descriptionCredit;
-  }
+  },
+  decrire: function(){
+    var solde = console.log("Solde banque de "+this.nom+" solde Epargne est de : " + this.solde  );
+  },
+  crediter: function (montant) {
+      this.solde = this.solde + montant;
+  },
+  // Débite le compte d'un certain montant
+  debiter: function (montant) {
+      this.solde = this.solde - montant;
+  },
 };
 
-var solde = compteAlexCrediter.crediterSolde; // on attribue le résultat de compte crédité à la valeure de solde qu'on s tock
-
-var entree = Number(prompt("Entrez une somme à débiter sur un compte à actuellement : " + solde + " €" )); // on entre une nouvelle donnée à stocker
-
-var compteAlexDebiter = {
-  titulaire:"Alex",
-debiter: solde - entree, // cette propriété décrédite le solde
-debiterSolde : function () {
-  var descriptionCredit = "Titulaire "+ this.titulaire + " , solde : " + this.debiter + " euros."; // il reste sur le compte
-  return  descriptionCredit;
-}
+var CompteEpargne = Object.create(compteBancaire);
+// Initialise le compte épargne
+CompteEpargne.initCE = function (titulaire, solde, tauxInteret) {
+    this.initCB(titulaire, solde);
+    this.tauxInteret = tauxInteret;
 };
-console.log(compteAlexDebiter.debiterSolde()); // on affiche ce qu'il reste sur le compte.
+// Calcule et ajoute les intérêts au solde cu compte
+CompteEpargne.ajouterInterets = function () {
+    var interets = this.solde * this.tauxInteret;
+    this.solde += interets;
+};
+
+var compte1 = Object.create(compteBancaire);
+compte1.initCB("Alex", 100);
+var compte2 = Object.create(CompteEpargne);
+compte2.initCE("Marco", 50, 0.05);
+
+console.log("Voici l'état initial des comptes :");
+console.log(compte1.decrire());
+console.log(compte2.decrire());
+
+var montant = Number(prompt("Entrez le montant à transférer entre les comptes :"));
+compte1.debiter(montant);
+compte2.crediter(montant);
+
+// Calcule et ajoute les intérêts au solde du compte
+compte2.ajouterInterets();
+
+console.log("Voici l'état final des comptes après transfert et calcul des intérêts :");
+console.log(compte1.decrire());
+console.log(compte2.decrire());
