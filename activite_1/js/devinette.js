@@ -33,4 +33,3 @@ var iteration = 0
             break;// on arrete le programme ici
             }
     } console.log( " vous avez atteint " + iteration + " iteration")
-// ceci est juste un test de pull sur ipad pour ppush dans un IDE ipad
