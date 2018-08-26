@@ -1,1 +1,1 @@
-# learingJavascript-p2
+# Cours JS opcr
